@@ -1,0 +1,258 @@
+body {
+    min-height: 97vh;
+    background-color: #16171c;
+    /* background-color: #AAECFF; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/*.imanol {
+    text-shadow: 0 2px #e8fecc, 2px 0 #e8fecc, 0 -2px #e8fecc, -2px 0 #e8fecc, -2px 2px #e8fecc, 2px -2px #e8fecc, 2px 2px #e8fecc, -2px -2px #e8fecc;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 2.2em;
+    color: #86c92c;
+    background-color: #AAECFF;
+    width: 110% auto;
+    max-width: 600px;
+    margin: 150px auto;
+    padding: 60px;
+    border-bottom-left-radius: 38px;
+    border-bottom-right-radius: 38px;
+    border-top-left-radius: 38px;
+    border-top-right-radius: 38px;
+    border-bottom: 9px solid rgb(14, 41, 100);
+    border-top: 9px solid rgb(14, 41, 100);
+    position: relative;
+    top: -130px;
+    /*bottom: 10px;*/
+
+
+/*right: 800px;*/
+
+
+/*left: 50px;*/
+
+.character {
+    min-width: 300px;
+    min-height: 250px;
+    background-color: #869fa7;
+    border: 20px solid #EEE;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: -1;
+}
+
+.turn-to {
+    animation-duration: 2.5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+.christmas-hat {
+    width: 200px;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    top: 45px;
+}
+
+.red-part {
+    width: 200px;
+    height: 120px;
+    background-color: #FF4742;
+    box-shadow: inset -10px -11px 0px 11px rgba(0, 0, 0, 0.05);
+    /* box-shadow: inset -11px 0px 0px 0px rgba(0, 0, 0, 0.2); */
+    border-radius: 100px 100px 0 0;
+    animation-name: redAndGreen-shadow;
+}
+
+.red-part::before {
+    content: "";
+    width: 200px;
+    height: 120px;
+    background-color: #f2433f;
+    box-shadow: inset 0 0 0px 100px rgba(0, 0, 0, 0.05);
+    border-radius: 100px 100px 10px 10px;
+    position: absolute;
+    top: 0px;
+    z-index: -1;
+    animation: shake 1.5s infinite alternate ease-in-out;
+}
+
+.white-part {
+    width: 220px;
+    height: 50px;
+    background-color: #EEE;
+    box-shadow: inset -4px -6px 0px 4px rgba(0, 0, 0, 0.05);
+    border-radius: 20px;
+    position: absolute;
+    top: 100px;
+    animation-name: white-shadow;
+}
+
+.white-ball {
+    width: 50px;
+    height: 50px;
+    background-color: #e6e6e6;
+    /* box-shadow: inset 4px -5px 0px 4px rgba(0, 0, 0, 0.05); */
+    border-radius: 50%;
+    position: absolute;
+    right: -18px;
+    top: 100px;
+    z-index: -2;
+    animation: shake-white-ball 1.5s infinite alternate ease-in-out;
+}
+
+.grinch {
+    width: 200px;
+    height: 280px;
+    background-color: #86c92c;
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    box-shadow: inset 10px -11px 0px 11px rgba(0, 0, 0, 0.05);
+    position: relative;
+    top: -45px;
+    z-index: -1;
+    display: flex;
+    justify-content: center;
+    animation-name: redAndGreen-shadow;
+}
+
+.grinch .eye {
+    width: 50px;
+    height: 25px;
+    background-color: #e8fecc;
+    border-radius: 100px 100px 0 0;
+    margin: 0 19px;
+    position: relative;
+    bottom: -100px;
+    overflow: hidden;
+    transform: rotate(180deg);
+    animation-name: move-eyes;
+}
+
+.grinch .eye .pupil {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #19235b;
+    position: absolute;
+    bottom: -8px;
+    animation-name: move-pupil;
+}
+
+.grinch .nose {
+    width: 30px;
+    height: 30px;
+    border-radius: 20% 20% 50%;
+    transform: rotate(45deg);
+    background-color: #19235b;
+    position: absolute;
+    bottom: 125px;
+    animation-name: move-nose;
+}
+
+.name {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 2.2em;
+    color: #86c92c;
+    text-shadow: 0 2px #e8fecc, 2px 0 #e8fecc, 0 -2px #e8fecc, -2px 0 #e8fecc, -2px 2px #e8fecc, 2px -2px #e8fecc, 2px 2px #e8fecc, -2px -2px #e8fecc;
+}
+
+@keyframes shake {
+    from {
+        transform: translateX(10px) rotate(-7deg);
+    }
+    50% {
+        transform: translateY(4px);
+    }
+    to {
+        transform: translateX(-5px) rotate(5deg);
+    }
+}
+
+@keyframes shake-white-ball {
+    from {
+        transform: translateX(20px);
+    }
+    to {
+        transform: translateX(-200px);
+    }
+}
+
+@keyframes redAndGreen-shadow {
+    from {
+        box-shadow: inset 10px -11px 0px 11px rgba(0, 0, 0, 0.05);
+    }
+    25%,
+    50% {
+        box-shadow: inset -10px -11px 0px 11px rgba(0, 0, 0, 0.05);
+    }
+    75%,
+    100% {
+        box-shadow: inset 10px -11px 0px 11px rgba(0, 0, 0, 0.05);
+    }
+}
+
+@keyframes white-shadow {
+    from {
+        box-shadow: inset 4px -6px 0px 4px rgba(0, 0, 0, 0.05);
+    }
+    25%,
+    50% {
+        box-shadow: inset -4px -6px 0px 4px rgba(0, 0, 0, 0.05);
+    }
+    75%,
+    100% {
+        box-shadow: inset 4px -6px 0px 4px rgba(0, 0, 0, 0.05);
+    }
+}
+
+@keyframes move-pupil {
+    from {
+        left: 0;
+    }
+    25%,
+    50% {
+        left: 30px;
+    }
+    75%,
+    100% {
+        left: 0;
+    }
+}
+
+@keyframes move-eyes {
+    from {
+        transform: rotate(180deg) translateX(-15px);
+    }
+    25%,
+    50% {
+        transform: rotate(180deg) translateX(15px);
+    }
+    75%,
+    100% {
+        transform: rotate(180deg) translateX(-15px);
+    }
+}
+
+@keyframes move-nose {
+    from {
+        transform: translateX(15px) rotate(45deg);
+    }
+    25%,
+    50% {
+        transform: translateX(-15px) rotate(45deg);
+    }
+    75%,
+    100% {
+        transform: translateX(15px) rotate(45deg);
+    }
+}
